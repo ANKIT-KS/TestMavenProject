@@ -33,13 +33,13 @@ steps:
     #verbose: # Optional
     #quiet: # Optional    
 
-- task: SnykSecurityScan@1
-  inputs:
-    serviceConnectionEndpoint: 'testmavenSnyk'
-    testType: 'app'
-    monitorWhen: 'always'
-    failOnIssues: true
-    projectName: 'MavenSnykDemo-13/12/2021'
+#- task: SnykSecurityScan@1
+#  inputs:
+#    serviceConnectionEndpoint: 'testmavenSnyk'
+#    testType: 'app'
+#    monitorWhen: 'always'
+#    failOnIssues: true
+#    projectName: 'MavenSnykDemo-13/12/2021'
 
 - task: FortifyOnDemandStatic@8
   inputs:
@@ -47,5 +47,10 @@ steps:
     FodConnection: 'FoD'
     ReleaseOptions: '0'
     ReleaseId: 167905
+    EntitlementSelection: '1'
     EntitlementPreference: '2'
-    BuildType: 'none'
+    OverrideScanSettings: '2'
+    InProgressScanActionType: '2'
+    RemediationScanPreference: '2'
+    BuildType: 'mvn'
+    PolicyFailAction: '0'
