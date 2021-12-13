@@ -28,3 +28,12 @@ steps:
     monitorWhen: 'always'
     failOnIssues: true
     projectName: 'MavenSnykDemo-13/12/2021'
+
+- task: FortifyOnDemandStatic@8
+  inputs:
+    FortifyProjects: '$(build.artifactstagingdirectory)'
+    FodConnection: 'FoD'
+    ReleaseOptions: '0'
+    ReleaseId: 167905
+    EntitlementPreference: '2'
+    BuildType: 'none'
