@@ -40,7 +40,7 @@ steps:
 
 - task: FortifyOnDemandStatic@8
   inputs:
-    FortifyProjects: '$(Build.ArtifactStagingDirectory)/fortify.zip'
+    FortifyProjects: '.'
     FodConnection: 'FoD'
     ReleaseOptions: '0'
     ReleaseId: 167905
